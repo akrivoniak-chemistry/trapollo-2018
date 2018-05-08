@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="not-found-page mih100%">
+	    <h1 class="heading-1 mt70 c-orange tac">{{ notfound_title }}</h1>
+	    <div class="tac" >
+	        {{ notfound_content }}
+	    </div>
+	    <div class="posr w800 w80%@md w95%@sm horizontal-align-absolute">
+	        <div class="self-select-menu posa w120% w100%@sm t100% tac">
+	        	{% if include_three_blocks_from_homepage %}
+		        	{% for item in home %}
+		        		<a class="self-select-menu--cta-container self-select-menu--cta-container-1 posr h250 w220 mr20 dib ff-produkt span-4@md span-8@sm push-2@sm animate anps-r" href="{{ item.button_link }}">
+		        		 	<div class="cta-container--tile bgc-white posa bxsh0-0-35-lightergray w100% float-on-hover">
+		        		 		{% if loop.index == 1 %}
+		        		 			{% include "snippets/icon-home-block1.twig" %}
+		        		 		{% elseif loop.index == 2 %}
+		        		 			{% include "snippets/icon-home-block2.twig" %}
+		        		 		{% else %}
+		        		 			{% include "snippets/icon-home-block3.twig" %}
+		        		 		{% endif %}
+		        		 		<div class="self-select-menu--cta-prompt fz19 c-dark-blue p0-10 mt75 mb75 fw300 tal tac@sm" data-reactid="181">{{ item.content }}</div>
+	                            <div class="self-select-menu--cta bxsh10-10-35-lightgray posa w160 l50% t100% p20-0 bgc-orange c-white fvsc ls1 tdn" data-reactid="182">{{ item.button_text }}</div>
+		        		 	</div>
+		        		 </a>
+			        {% endfor %}
+			      {% endif %}
+	        </div>
+	    </div>
+	</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+.form-input {
+	border-bottom: 2px solid $color-light-blue;
+	font-size: .8em;
+	padding: 10px 5px;
+
+	&.error {
+		border-bottom-color: #f00;
+	}
+}
+
+select.form-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  border-radius: 0;
+  outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}

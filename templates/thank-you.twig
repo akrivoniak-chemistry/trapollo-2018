@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="default-page post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<h1 class="heading-1 c-orange mt60 tac">{{post.thank_you_headline}}</h1>
+		<div class="span-8 push-2 span-12@sm mt50 lh1.5">
+			{{post.thank_you_content}}
+		</div>
+	</section>
+
+	<section class="thank-you-page" data-reactid="73">
+    <!-- react-empty: 74 -->
+    	<div class="posa h100vh w100vw oh l0 t0 z0 t100%@sm float-on-scroll" data-reactid="75">
+    		<img src="{{ theme.link }}/images/contact-page-bg-top.jpg" alt="Group of Medical Professionals Talking" data-reactid="76">
+    	</div>
+    	<div class="posr z0" data-reactid="77">
+        	<h1 class="heading-1 c-orange mt60 tac" data-reactid="78">{{post.thank_you_headline}}</h1>
+        	<h2 class="tac w100% c-dark-blue heading-2 mt20" data-reactid="79">{{post.thank_you_content}}</h2>
+        </div>
+	</section>
+{% endblock %}

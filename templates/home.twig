@@ -1,0 +1,66 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="home-page mih100%">
+
+		<img class="home-page--bg-1 posa l0 t0 w50%@sm t300@sm float-on-scroll" src="{{ theme.link }}/images/home-page-bg-top.jpg" alt="Male Medical Professional Wearing Scrubs and Stethoscope" /><img class="home-page--bg-2 posa r0 b90 b10%@sm w300@sm dn@sm float-on-scroll" src="{{ theme.link }}/images/home-page-bg-bottom.jpg" alt="Elderly Man Speaking with Medical Professional" />
+
+		<div class="home-hero bd2-s-dark-blue w800 w80%@md w95%@sm horizontal-align-absolute">
+			<div class="home-hero--icon horizontal-align-absolute">
+				{% include "snippets/icon-home-hero.twig" %}
+			</div>
+			<div class="home-hero--content horizontal-align t75 w90%">
+	            <h1 class="home-hero--heading heading-1 tac c-orange">{{ post.home_headline }}</h1>
+	            {% if post.home_description %}
+	            	<div class="home-hero--text mt30 tac">{{ post.home_description }}</div>
+	            {% endif %}
+	        </div>
+
+	        <div class="self-select-menu posa w120% w100%@sm t100% tac">
+		        {% for item in post.get_field('home_boxes') %}
+	        		 <a class="self-select-menu--cta-container self-select-menu--cta-container-1 posr h250 w220 mr20 dib ff-produkt span-4@md span-8@sm push-2@sm " href="{{ item.button_link }}">
+	        		 	<div class="cta-container--tile bgc-white posa bxsh0-0-35-lightergray w100% float-on-hover">
+	        		 		{% if loop.index == 1 %}
+	        		 			{% include "snippets/icon-home-block1.twig" %}
+	        		 		{% elseif loop.index == 2 %}
+	        		 			{% include "snippets/icon-home-block2.twig" %}
+	        		 		{% else %}
+	        		 			{% include "snippets/icon-home-block3.twig" %}
+	        		 		{% endif %}
+	        		 		<div class="self-select-menu--cta-prompt fz19 c-dark-blue p0-10 mt75 mb75 fw300 tal tac@sm" data-reactid="181">{{ item.content }}</div>
+                            <div class="self-select-menu--cta bxsh10-10-35-lightgray posa w160 l50% t100% p20-0 bgc-orange c-white fvsc ls1 tdn" data-reactid="182">{{ item.button_text }}</div>
+	        		 	</div>
+	        		 </a>
+		        {% endfor %}
+	        </div>
+		</div>
+	</section>
+	{% if stories %}
+	<div class="posr z0 w800 w80%@md w95%@sm m-auto">
+		<div class="stories-list clearfix">
+        	<div class="stories-columns-2">
+        		{% for item in stories %}
+        			{% if loop.length == 2 %}
+		        		<div class="story-tile mb100 posr span-6 span-12@md span-12@sm">
+		        			<div class="featured-idea-tile--image-container curp db oh h100% posa fll w50% w100vw@sm posa@sm ml-20@sm" style="background-image:url({{ item.thumbnail.src }});">
+		        				
+		        			</div>
+		        			<div class="featured-idea-tile--content posr flr h100% w50% w100%@sm mt200@sm">
+		        				<div class="idea-tile--container p20 bxsh10-10-35-lightgray bgc-white posr float-on-hover h350 h300@sm">
+		        					<a href="{{ item.link }}" class="tdn curp h100% tdn tdec">
+		        						<h3 class="c-dark-blue fz20 fReg ff-produkt tdn mt30 tdn">"{{ item.title }}"</h3>
+		        						<h4 class="c-dark-blue fz14 fReg ff-produkt tdn mt10 story-tile--author tdn">{{ item.quote_author }}</h4>
+		        						<div class="featured-idea-tile--read-more horizontal-align-absolute@sm posa l0 ff-produkt c-orange fvsc fx14 ls1 tac reunderline">read more</div>
+		        					</a>
+		        				</div>
+		        			</div>
+		        		</div>
+	        		{% endif %}
+        		{% endfor %}
+        	</div>
+        </div>
+    </div>
+    {% endif %}
+	
+{% endblock %}

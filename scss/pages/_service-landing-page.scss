@@ -1,0 +1,10 @@
+.service-landing-page {
+  .video-container > * {
+    @include span(8);
+    @include push(2);
+
+    @media all and (max-width: $bp-md) {
+      @include span(12);
+    }
+  }
+}

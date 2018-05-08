@@ -1,0 +1,74 @@
+/*!
+Theme Name: Trapollo Theme
+Theme URI: http://underscores.me/
+Author: Chemistry Communications
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: trapollo
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Trapollo Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+@import "./config/variables";
+@import "./config/reset";
+@import "../node_modules/atomic-scss/scss/atomic";
+@import "../node_modules/susy/sass/susy"; 
+
+// atomic styles specific to this site
+@import "./site/atomic";
+
+// some default styling for elements
+@import "./site/default";
+
+// icons
+@import "./site/icons";
+
+// site wide styles
+@import "./site/typography.scss";
+@import "./site/grid.scss";
+
+// styles for svgs. Since the css was written by illustrator,
+// it may make sense to keep them all in one place
+@import "./site/svg";
+@import "./site/animation";
+
+// global components (used on every page)
+@import "./global/header";
+@import "./global/navigation";
+@import "./global/navigation-menu";
+@import "./global/content-body";
+@import "./global/form-inputs";
+@import "./global/footer";
+
+// components (used on some pages)
+@import "./components/consultation-form";
+@import "./components/services-menu";
+@import "./components/services-menu-oem";
+@import "./components/services-side-menu";
+@import "./components/about-menu";
+@import "./components/hotspot";
+@import "./components/self-select-menu";
+
+// page level css (used on a single page)
+@import "./pages/home-page";
+@import "./pages/service-landing-page";
+@import "./pages/service-page";
+@import "./pages/ideas-landing-page";
+@import "./pages/idea-page";
+@import "./pages/team-page";
+@import "./pages/consultation-page";
+@import "./pages/software-page";
+@import "./pages/search-results-page";
+@import "./pages/not-found-page";
+@import "./pages/contact-page";

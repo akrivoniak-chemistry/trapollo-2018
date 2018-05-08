@@ -1,0 +1,170 @@
+//variable naming
+// use $<property>-description: value
+  // ex.
+  // $color-light-blue
+  // $width-large
+
+// base font -- assuming we are working with font-size: 10px;
+// default is 18px
+$font-size-base: 1.5rem;
+
+// wire framing colors
+$color-black    : #101010;
+$color-white    : #fefefe;
+$color-lightgray: lightgray;
+$color-gray     : gray;
+
+// width of site's content
+$width-wrapper: 960px;
+
+// the footer is always supposed to be on the bottom of the page, unless the
+// content naturally pushes the footer below the fold. However, some content
+// doesn't add to the document height, and there can be cases where the footer
+// will appear above other content when the browser has a small view height.
+//
+// When a browsers height is less than this variable, then we need to force the
+// footer below the bottom of the screen so everything will fit the following
+// pages/components determine this cutoff as necessary:
+//   home page, navigation
+$height-cutoff-point: 750px;
+
+// breakpoints
+// starting from 400px and using * 1.4 to scale (500 * 1.4 = 560, etc.)
+  // Redefine these widths by the actual design!
+$bp-lgx: 1536px;
+$bp-lg : 1097px;
+$bp-md : 820px; // @md
+$bp-sm : 650px; // @sm
+$bp-smx: 500px;
+
+$bp-wrapper: $width-wrapper;
+
+$padding-grid-side: 20px;
+$padding-grid-container: 0 $padding-grid-side;
+
+// heights/widths
+  // ex.
+  // $height-panel-title: 75px;
+  // $width-col: round($width-wrapper / 3);
+$height-header: 85px;
+$height-header-md: 70px;
+$height-header-sm: 60px;
+$height-footer: 120px;
+$height-footer-md: 120px;
+$height-footer-sm: 120px;
+
+$min-height-site   : $height-cutoff-point;
+$min-height-site-sm: $height-cutoff-point + 400px;
+
+// site colors
+  // ex.
+  // $color-brand-gold: #ffb81b;
+  // $color-brand-blue: #0e254d;
+$color-background: #f8f8f8;
+$color-orange    : #f26450;
+$color-light-blue: #4cc0ef;
+$color-dark-blue : #24205c;
+$color-lightergray: #efefef;
+$color-lightgray:  #cdcdcd;
+$color-gray      : #bcbec0;
+$color-dark-gray : #414042;
+
+$ff-graphik    : 'Graphik Web';
+$ff-produkt    : 'Produkt Web';
+
+// height
+$hs-px   : 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800;
+$hs-px-md: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800;
+$hs-px-sm: 0, 1, 5, 10, 15, 20, 25, 30, 40, 44, 50, 60, 70, 75, 80, 90, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800;
+
+// borders
+$bds: (
+  (1, 's', 'solid', 'white', $color-white),
+  (1, 's', 'solid', 'lightgray', $color-lightgray),
+  (1, 's', 'solid', 'gray', $color-gray),
+  (1, 's', 'solid', 'black', $color-black),
+  (1, 's', 'solid', 'light-blue', $color-light-blue),
+  (2, 's', 'solid', 'gray', $color-gray),
+  (2, 's', 'solid', 'orange', $color-orange),
+  (2, 's', 'solid', 'white', $color-white),
+  (2, 's', 'solid', 'light-blue', $color-light-blue),
+  (2, 's', 'solid', 'dark-blue', $color-dark-blue)
+);
+
+// background colors
+$bgcs: (
+  'white': $color-white,
+  'gray':$color-gray,
+  'orange': $color-orange,
+  'dark-blue': $color-dark-blue,
+  't': transparent
+);
+
+// colors
+$cs: (
+  'white':$color-white,
+  'lightgray':$color-lightgray,
+  'gray':$color-gray,
+  'orange': $color-orange,
+  'dark-gray': $color-dark-gray,
+  'light-blue': $color-light-blue,
+  'dark-blue': $color-dark-blue,
+  'black':$color-black
+);
+
+// font sizes
+$fzs:  10, 12, 13, 14, 15, 19, 20, 24, 28, 32, 48;
+$fzs-md:  10, 12, 13, 14, 15, 20, 24, 28, 32, 48;
+$fzs-sm:  10, 12, 13, 14, 15, 20, 24, 28, 32, 48;
+// order
+$ords: 1;
+// flex-grow
+$fxgs: 1;
+// flex-shrink
+$fxshs: 1;
+// flex-basis
+$fxbs: 0;
+// flex-direction
+$fxdrs: ();
+$fxdrs-md: ();
+$fxdrs-sm: ('cr': column-reverse);
+// flex-wrap
+$fxws: ();
+// justify-content
+$jcs: ();
+$jcs-md: ();
+$jcs-sm: ();
+// align-items
+$ais: ();
+// align-self
+$ass: ();
+
+
+// susy grid config
+$grid-columns-count: 12;
+$susy: (
+  flow              : ltr,
+  math              : fluid,
+  output            : float,
+  gutter-position   : after,
+  container         : auto,
+  container-position: center,
+  columns           : $grid-columns-count,
+  gutters           : .2,
+  column-width      : false,
+  global-box-sizing : border-box,
+  last-flow         : to,
+  debug: (
+    image : hide,
+    color : rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image  : true,
+    background-options: false,
+    box-sizing        : true,
+    clearfix          : false,
+    rem               : true,
+  )
+);

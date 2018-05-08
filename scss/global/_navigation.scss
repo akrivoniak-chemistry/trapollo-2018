@@ -1,0 +1,46 @@
+.navigation {
+
+  .navigation--request-consultation-link {
+    vertical-align: middle;
+  }
+
+  .navigation--menu-button {
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      height: 2px;
+      width: 25px;
+      background-color: $color-dark-blue;
+      transition: 0.2s width;
+    }
+
+    &::before {
+      top: 12px;
+    }
+
+    &::after {
+      bottom: 14px;
+    }
+
+    .menu-button--middle-line {
+      height: 2px;
+      transition: 0.2s width;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        width: 20px;
+      }
+
+      .menu-button--middle-line {
+        width: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.software-page {
+  @media all and (max-width: $bp-smx) {
+    .software-page--bg {
+      display: none;
+    }
+  }
+}
+.trapollo-platform {
+	& .software-hotspot-1 {
+		left: 50px;
+		top: 400px;
+	}
+	& .software-hotspot-2 {
+		right: 175px;
+		top: 400px;
+		left: auto;
+	}
+}

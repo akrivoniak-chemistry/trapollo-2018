@@ -1,0 +1,13 @@
+.not-found-page {
+  @media all and (max-width: $bp-sm) {
+    height: 1250px;
+  }
+
+  .self-select-menu {
+    transform: translate(-45%, 35%);
+
+    @media all and (max-width: $bp-sm) {
+      transform: translate(-45%, 20%);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<footer class="footer posr c-gray fz10 p50-0 z1 pb80">
+    <div class="grid-container">
+        <div class="footer--links span-12 mb20 mb10@md tac@md">
+            {% for item in main_footer.get_items %}
+                <a class="navigation--request-consultation-link c-orange lh1.8 lh1.5@md reunderline thick ff-produkt fvsc ls1 dib tdn ttu fz12@sm mr5@sm posr@smm mr40 mr10@sm" href="{{ item.link }}">{{ item.title }}</a>
+            {% endfor %}
+        </div>
+        <div class="footer--legal-info span-8 span-12@md tac@md">
+            {{ footer_copyright }}
+            {% if footer_small_links %}
+                {% for item in footer_small_links %}
+                    <a class="ml5 ff-produkt fz14 fvsc ls1 tdn bb1-s-gray c-dark-gray:hover" href="{{ item.link_url }}">{{ item.link_text }}</a>
+                    {% if loop.index < loop.length %}
+                        <span class="dib m0-5">|</span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="footer--social-icons span-4 span-last span-12@md span-last-clear@md tar tac@md mt20@md">
+            {% if company_twitter %}
+                <a href="{{ company_twitter }}" target="_blank" rel="noopener noreferrer" class="mr20 tdn fz20 c-dark-gray:hover" data-reactid="689"><span class="icon-twitter" data-reactid="690"></span></a>
+            {% endif %}
+            {% if company_facebook %}
+                <a href="{{ company_facebook }}" target="_blank" rel="noopener noreferrer" class="mr20 tdn fz20 c-dark-gray:hover" data-reactid="689"><span class="icon-facebook" data-reactid="690"></span></a>
+            {% endif %}
+            {% if company_linkedin %}
+                <a href="{{ company_linkedin }}" target="_blank" rel="noopener noreferrer" class="mr20 tdn fz20 c-dark-gray:hover" data-reactid="689"><span class="icon-linkedin2" data-reactid="690"></span></a>
+            {% endif %}
+        </div>
+    </div>
+</footer>

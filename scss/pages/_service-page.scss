@@ -1,0 +1,119 @@
+.service-page {
+  @media all and (max-width: $bp-sm) {
+    .quote-block {
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+
+  .content-main--text p {
+    margin-top: 5px;
+  }
+}
+.service-page--content {
+  position: relative;
+}
+.hotspot {
+  padding: 2em;
+}
+.tab-content {
+	display: none; 
+	&.tab-content_active {
+		position: relative;
+		opacity: 1;
+	}
+}
+.tab-content_program-management {
+  & .service-hotspot-1 {
+    left: 120px;
+    top: 80px;
+  }
+  & .service-hotspot-2 {
+      right: 190px;
+      top: 50px;
+  }
+  & .service-hotspot-3 {
+    right: 50px;
+    bottom: 125px;
+  }
+}
+.tab-content_patient-support {
+  & .service-hotspot-1 {
+    top: 120px;
+    left: 200px;
+  }
+  & .service-hotspot-2 {
+          right: 160px;
+      top: 160px;
+  }
+  & .service-hotspot-3 {
+    right: 20px;
+    top: 40px;
+  }
+}
+.tab-content_logistics{
+  & .service-hotspot-1 {
+    top: 115px;
+    left: 140px;
+  }
+  & .service-hotspot-2 {
+    right: 100px;
+    top: 115px;
+  }
+  & .service-hotspot-3 {
+    right: 0;
+    top: 70px;
+  }
+}
+.tab-content_devices {
+  & .service-hotspot-1 {
+    top: 150px;
+    left: 90px;
+  }
+  & .service-hotspot-2 {
+    right: 140px;
+    bottom: 0;
+  }
+  & .service-hotspot-3 {
+    right: 85px;
+    top: 90px;
+  }
+}
+.item--title__mobile {
+  display: none;
+  @media all and (max-width: $bp-md) {
+    display: block;
+  }
+}
+.video-container {
+  max-width: 100%;
+  & iframe {
+    max-width: 100%;
+  }
+}
+
+.page-id-32 .span-6 {
+  width: 32.39437%;
+  float: left;
+  margin-right: 1.40845%;
+  &:last-child {
+    margin: 0;
+    float: right;
+  }
+  & .service-device-fulfillment-svg,
+  & .service-fda-compliance-svg {
+    margin-top: -35px;
+  }
+  @media all and (max-width: $bp-md) {
+    width: 47.5%;
+    float: left;
+    margin-right: 1%;
+    &:last-child {
+      float: left;
+    }
+    & .services-menu--item {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}

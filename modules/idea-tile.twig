@@ -1,0 +1,13 @@
+<div class="idea-tile mb100 posr span-4 span-6@md span-12@sm">
+    <div class="idea-tile--container bgc-white posr bxsh0-0-35-lightergray float-on-hover h350">
+        <div class="idea-tile--content h100% p20 posr">
+        	{% for cat in categories %}
+        		<a class="c-orange ff-produkt fvsc ls1 tdn" href="{{ cat.link }}">{{ cat.title }}</a>
+        	{% endfor %}
+        	<a class="tdn curp h100%" href="{{ item.link }}">
+        		<h3 class="heading-3 c-dark-blue fz20 ff-produkt tdn mt60">{{ item.title }}</h3><div class="site-content-defaults h100% mt30 lh1.5"></div>
+        		<div class="idea-tile--read-more bxsh10-10-35-lightgray horizontal-align-absolute w220 t320 p20-0 bgc-orange ff-produkt c-white fvsc ls1 tac">read more</div>
+        	</a>
+        </div>
+    </div>
+</div>

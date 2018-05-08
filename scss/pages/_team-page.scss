@@ -1,0 +1,16 @@
+.team-page {
+  @media all and (max-width: $bp-smx) {
+    .person--info {
+      top: 25%;
+    }
+  }
+}
+.person--bio p {
+	margin-top: 20px;
+}
+.about-page-content {
+	display: none;
+}
+.about-menu .about-menu--link.about-menu--link__active:hover {
+	color: #4cc0ef;
+}

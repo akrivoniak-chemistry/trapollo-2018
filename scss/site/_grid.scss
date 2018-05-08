@@ -1,0 +1,130 @@
+@import "config/variables";
+
+/**
+ * Susy is used for creating grids.
+ */
+
+.grid-container {
+  @include container($width-wrapper);
+  padding: $padding-grid-container
+}
+
+@for $i from 1 through $grid-columns-count {
+  .span-#{$i} {
+    @include span($i);
+  }
+
+  .push-#{$i} {
+    @include push($i);
+  }
+
+  .pull-#{$i} {
+    @include pull($i);
+  }
+}
+
+.gallery-columns-3 {
+  .span-4:nth-child(3n+3) {
+    @include last;
+  }
+}
+
+.gallery-columns-4 {
+  .span-3:nth-child(4n+4) {
+    @include last;
+  }
+}
+
+.span-last {
+  @include last;
+}
+
+@media all and (max-width: $bp-md) {
+  @for $i from 1 through $grid-columns-count {
+    .span-#{$i}\@md {
+      @include span($i);
+    }
+
+    .push-#{$i}\@md {
+      @include push($i);
+    }
+
+    .pull-#{$i}\@md {
+      @include pull($i);
+    }
+  }
+
+  .gallery-columns-3 {
+    .span-4:nth-child(3n+3) {
+      float: left;
+      @include gutter();
+    }
+
+    .span-6\@md:nth-child(2n+2) {
+      @include last;
+    }
+  }
+
+.gallery-columns-4 {
+  .span-3:nth-child(4n+4) {
+    float: left;
+    @include gutter();
+  }
+
+  .span-4\@md:nth-child(3n+3) {
+    @include last;
+  }
+}
+
+  .span-last\@md {
+    @include last;
+  }
+
+  .span-last-clear\@md {
+    float: left;
+    @include gutter();
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+  @for $i from 1 through $grid-columns-count {
+    .span-#{$i}\@sm {
+      @include span($i);
+    }
+
+    .push-#{$i}\@sm {
+      @include push($i);
+    }
+
+    .pull-#{$i}\@sm {
+      @include pull($i);
+    }
+  }
+
+  .gallery-columns-3 {
+    .span-4\@md:nth-child(2n+2) {
+      float: left;
+      @include gutter();
+    }
+  }
+
+.gallery-columns-4 {
+  .span-4\@md:nth-child(3n+3) {
+    float: left;
+    @include gutter();
+  }
+
+  .span-6\@sm:nth-child(2n+2) {
+    @include last;
+  }
+}
+
+  .span-last\@sm {
+    @include last;
+  }
+
+  .span-last-clear\@sm {
+    float: left;
+    @include gutter();
+  }
+}

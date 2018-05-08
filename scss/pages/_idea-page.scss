@@ -1,0 +1,117 @@
+.idea-page {
+  .idea-page--more-articles img {
+    display: none;
+  }
+
+  @media all and (max-width: $bp-sm) {
+    .idea-page--image-container {
+        width: 100vw;
+        transform: translateX(-#{$padding-grid-side});
+    }
+  }
+
+  .idea-tile--container,
+  .idea-tile--read-more {
+    box-shadow: none;
+  }
+}
+.idea-tile--content .read-more {
+  display: none;
+}
+.idea-sort {
+   & span {
+      top: 25px;
+   }
+   & select,
+   & input {
+    background: transparent;
+    border-top: none;
+    font-size: 15px;
+   }
+   & .span-6 {
+      width: 47%;
+      margin-right: 3%;
+      &:last-child {
+        margin-right: 0;
+      }
+   }
+   @media all and (max-width: $bp-sm) {
+     & .span-6 {
+      width:100%;
+      margin: 0 0 40px;
+      &:last-child {
+        margin: 0;
+      }
+     }
+   }
+}
+.idea-sort-title {
+  color: $color-lightgray;
+}
+.idea-sort--search {
+  &:before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    border: 2px solid $color-light-blue;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 34px;
+    background-color: $color-light-blue;
+    transform: rotateZ(30deg);
+    height: 2px;
+    width: 10px;
+  }
+}
+.idea-search-btn {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 15%;
+}
+
+.whitepaper-form--label {
+  width: 100%;
+}
+.whitepaper--btn {
+  right: -60px;
+  bottom: -62px;
+}
+.whitepaper-icon {
+  left: -60px;
+  & .service-logistics-svg {
+    width: 120px;
+    height: 100px;
+  }
+  @media all and (max-width: $bp-md) {
+    left: 5px;
+  }
+  @media all and (max-width: $bp-sm) {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -50px;
+    text-align: center;
+  }
+}
+.whitepaper {
+  @media all and (max-width: $bp-sm) {
+    margin-top: 80px;
+  }
+}
+.whitepaper-wrapper {
+   @media all and (max-width: $bp-md) {
+    padding-left: 150px;
+   }
+   @media all and (max-width: $bp-sm) {
+    padding: 80px 40px 40px;
+   }
+}

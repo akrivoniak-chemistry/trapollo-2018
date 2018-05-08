@@ -1,0 +1,29 @@
+.header {
+  height: $height-header;
+  box-shadow: 0 5px 10px #ededed;
+
+  @media all and (max-width: $bp-md) {
+    height: $height-header-md;
+  }
+
+  @media all and (max-width: $bp-sm) {
+    height: $height-header-sm;
+
+    .grid-container {
+      padding: 0 10px;
+    }
+    .logo-container svg {
+      width: 130px;
+    }
+  }
+  .navigation .navigation--request-consultation-link {
+    @media all and (max-width: $bp-sm) {
+      line-height: 1.1;
+      right: -5px;
+    }
+  }
+  .navbar-form {
+    outline: none;
+    box-shadow: none;
+  }
+}

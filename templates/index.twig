@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% set featuredPostId = 0 %}
+	<section class="ideas-landing-page">
+		<h1 class="heading-1 c-orange mt60 tac">{{ news_page_headline }}</h1>
+    	{% if news_page_description  %}
+    		<div class="mt30 tac">{{ news_page_description }}</div>
+    	{% endif %}
+    	<div class="mt50 dib bb2-s-light-blue bb2-s-orange:hover fz20"></div>
+        <section class="idea-sort clearfix posr">
+            <div class="posr span-6 span-6@md span-12@sm idea-sort--select">
+                <h5 class="ff-produkt fz12 fReg ls1 tdn idea-sort-title">Sort By Category</h5>
+                <select type="text"class="form-input bgc-white bdn w100% Graphik-Light-Web">
+                    <option value="" disabled selected>Select a category</option>
+                    {% for item in cats %}
+                        {% if item.name != "Uncategorized" %}
+                            <option value="{{ item.slug }}" data-category="{{ item.slug }}">{{ item.name }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    <option value="all" data-category="">Show All</option>
+                </select>
+                <span class="posa r5 t15 c-light-blue posa">∨</span>
+            </div>
+            <div class="posr span-6 span-6@md span-12@sm idea-sort--search">
+                 <h5 class="ff-produkt fz12 fReg ls1 tdn idea-sort-title">Search</h5>
+                 <input type="text" class="form-input bgc-white bdn w100% Graphik-Light-Web">
+                 <button type="submit" index="2" class="idea-search-btn posa"></button>
+            </div>
+        </section>
+    	<section>
+    		<section class="idea-list mt60 clearfix">
+    			{% if featured_post  %}
+    				{% for item in TimberPost(featured_post) %}
+    					{% include 'modules/featured-post.twig' with {item: item} %}
+    					{% set featuredPostId = item.id %}
+    				{% endfor %}
+    			{% else %}
+    				{% for item in recent_post %}
+		    			{% include 'modules/featured-post.twig' with {item: item} %}
+		    			{% set featuredPostId = item.id %}
+			        {% endfor %}
+			    {% endif %}
+			    <div class="gallery-columns-3">
+			    	{% filter shortcodes %}
+						[ajax_load_more container_type="div" post_type="post" posts_per_page="9" scroll="false" button_label="Load More" exclude="{{ featuredPostId }}"]
+					{% endfilter %}
+			    </div>
+    		</section>
+    	</section>
+	</section>
+
+{% endblock %}

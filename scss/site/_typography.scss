@@ -1,0 +1,190 @@
+@font-face {
+  font-family: $ff-graphik;
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-LightItalic-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-LightItalic-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-LightItalic-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-LightItalic-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.Graphik-LightItalic-Web {
+  font-family: $ff-graphik;
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: $ff-graphik;
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-Light-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-Light-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-Light-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-Light-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Graphik-Light-Web {
+  font-family: $ff-graphik;
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: $ff-graphik;
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-Medium-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Graphik-Medium-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-Medium-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Graphik-Medium-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Graphik-Medium-Web {
+  font-family: $ff-graphik;
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: $ff-produkt;
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-MediumItalic-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-MediumItalic-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-MediumItalic-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-MediumItalic-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.Produkt-MediumItalic-Web {
+  font-family: $ff-produkt;
+  font-weight:  500;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: $ff-produkt;
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-Medium-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-Medium-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-Medium-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-Medium-Web.woff') format('woff');
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Produkt-Medium-Web {
+  font-family: $ff-produkt;
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: $ff-produkt;
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-LightItalic-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-LightItalic-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-LightItalic-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-LightItalic-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+.Produkt-LightItalic-Web {
+  font-family: $ff-produkt;
+  font-weight:  300;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family: $ff-produkt;
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-Light-Web.eot');
+  src: url('/wp-content/themes/trapollo/fonts/Produkt-Light-Web.eot?#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-Light-Web.woff2') format('woff2'),
+       url('/wp-content/themes/trapollo/fonts/Produkt-Light-Web.woff') format('woff');
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+.Produkt-Light-Web {
+  font-family: $ff-produkt;
+  font-weight:  300;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+html {
+  //set 10px baseline
+  // the advantage of this is ems are easier to use 1.5em = 15px
+  font-size: 10px;
+}
+
+body {
+  font-family: $ff-graphik, sans-serif;
+  font-size: $font-size-base;
+  color: $color-dark-gray;
+  font-weight: 300;
+  line-height: 1.3; // http://practicaltypography.com/line-spacing.html
+}
+
+//modular scale
+//find new scale on
+//http://type-scale.com/
+//or
+//
+//http://www.modularscale.com
+//base: 18px
+//ratios: 1.25
+
+.heading-1 {
+  font-family: $ff-produkt;
+  font-weight: 300;
+  font-size: 4.8rem;
+  line-height: 1.2;
+  @media all and (max-width: $bp-md) {
+    font-size: 2.5rem;
+  }
+}
+
+.heading-2 {
+  font-family: $ff-produkt;
+  font-weight: 300;
+  font-size: 2rem;
+  @media all and (max-width: $bp-md) {
+    font-size: 1.728rem;
+  }
+}
+
+.heading-3 {
+  font-family: $ff-produkt;
+  font-weight: 300;
+  font-size: 1.563rem;
+  @media all and (max-width: $bp-md) {
+    font-size: 1.44rem;
+  }
+}
+
+.heading-4 {
+  font-size: 1.25rem;
+}
+
+.heading-5 {
+  font-size: 1rem;
+}
+
+.heading-6 {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="software-page trapollo-platform">
+		<div class="software-page--content posr z1">
+			<h1 class="software-page--heading heading-1 c-orange mt60 tac">{{ post.page_headline }}</h1>
+			{% if post.page_description %}
+				<div class="mt30 tac">{{ post.page_description }}</div>
+			{% endif %}
+			{% if post.trapollo_platform_content %}
+				<div class="mt75 c-dark-blue ff-produkt fz20 fw100 w75%">{{ post.trapollo_platform_content }}</div>
+			{% endif %}
+			{% if post.trapollo_platform_graphic_title %}
+				<div class="c-orange ff-produkt fvsc ls1 mt50">{{ post.trapollo_platform_graphic_title }}</div>
+			{% endif %}
+			{% if post.trapollo_platform_graphic %}
+				<div class="platform-icons posr mb200@sm">
+					{% include 'snippets/icon-trapollo-platform.twig' %}
+
+					{% if post.get_field('pods') %}
+							{% for item in post.get_field('pods') %}
+							<div class="hotspot z3 software-hotspot-{{ loop.index }}  posa l50 t400 mt20 dn@md ">
+								<div class="hotspot--icon posr software-hotspot--icon w40 h40 curp bxsh10-10-35-lightgray bdrs50%">
+									<div>
+										<div class="breath posa"></div>
+										{% include "snippets/icon-hotspot.twig" %}
+									</div>
+								</div>
+								<div class="hotspot--copy posa l0 t0 bgc-dark-blue c-white w200 dn">
+									<div class="p15 pt30 pb30"><span className="Produkt-Light-Web lh1.5">{{ item.pod_content }}</span></div>
+								</div>
+							</div>
+							{% endfor %}
+					{% endif %}
+				</div>
+			{% endif %}
+		</div>
+		<img class="software-page--bg posa r0 t0 w100%@sm z0 float-on-scroll" src="{{ theme.link }}/images/platform-page-bg-top.jpg" alt="">
+	</section>
+	
+{% endblock %}

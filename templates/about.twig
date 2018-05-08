@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="about-page">
+		<section class="about-heading mt60">
+			{% if post.page_headline %}
+				<h1 class="about-heading--title heading-1 c-orange tac@md">{{ post.page_headline }}</h1>
+			{% endif %}
+			{% if post.page_description %}
+            	<div class="mt30 tac">{{ post.page_description }}</div>
+            {% endif %}
+		</section>
+		<div class="about-menu clearfix tac ff-produkt c-gray fvsc ls1 mt40 mb80">
+			{% if post.tab_one_name %}
+				<a class="about-menu--link h40 lh40px@sm posr span-5 tdn" href="#{{ post.tab_one_name|replace(' ', '-')|lower }}" data-tab="{{ post.tab_one_name|replace(' ', '-')|lower }}">{{ post.tab_one_name }}</a>
+			{% endif %}
+			{% if post.tab_two_name %}
+				<a class="about-menu--link h40 lh40px@sm posr  span-5 tdn" href="#{{ post.tab_two_name|replace(' ', '-')|lower }}" data-tab="{{ post.tab_two_name|replace(' ', '-')|lower }}">{{ post.tab_two_name }}</a>
+			{% endif %}
+		</div>
+		<div class="page-transition">
+			{% if post.tab_one_name %}
+	        	<section class="about-page-content team-page" data-id="{{ post.tab_one_name|replace(' ', '-')|lower }}">
+	        		<section class="team-page--listing mt50">
+	        			{% for item in post.get_field('leaders') %}
+		        			<div class="listing--person mb75 posr clearfix">
+		        				<div class="person--image-container z0 posa {% if loop.index is odd %}l0 {% else %} r0{% endif %} w35% w100vw@sm ml-20@sm">
+		        					<img src="{{ Image(item.leader_image).src }}" alt="{{ item.leader_name}}" class="person--img w100%">
+		        				</div>
+		        				<div class="person--info{% if loop.index is odd %} z1 posr bxsh10-10-35-lightgray p20 flr w80% bgc-white t30 w100%@sm r0@sm mt300@sm mt225@smx  {% else %} z1 posr bxsh-10-10-35-lightgray p20 fll w80% bgc-white t30 w100%@sm l0@sm mt300@sm mt225@smx {% endif %}">
+		        					{% if item.leader_title %}
+		        						<div class="person--title c-orange ff-produkt fvsc ls1">{{ item.leader_title }}</div>
+		        					{% endif %}
+		        					<h2 class="person--name c-dark-blue ff-produkt heading-2 mt50">{{ item.leader_name }}</h2>
+		        					<div class="person--bio mt30 pb20">
+		        						{{ item.leader_content }}
+		        					</div>
+		        				</div>
+		        			</div>
+		        		{% endfor %}
+	        		</section>
+	        	</section>
+	        {% endif %}
+
+	        {% if post.tab_two_name %}
+	        	<section class="careers-page about-page-content" data-id="{{ post.tab_two_name|replace(' ', '-')|lower }}">
+	            <!-- react-empty: 159 -->
+		            <div class="tac mt50">
+		                {{ post.careers_content }}
+		            </div>
+	        	</section>
+        	{% endif %}
+
+        </div>
+	</section>
+	
+{% endblock %}

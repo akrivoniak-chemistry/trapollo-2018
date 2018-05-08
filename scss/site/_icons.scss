@@ -1,0 +1,51 @@
+
+/*
+Icons from icomoon
+
+If you need to add more icons, go to icomoon.io and use the file
+/public/icomoon/selection.json to get the current project.
+
+Add the fonts, then download a new generated font file, and
+use this to replace the /public/icomoon directory.
+
+Copy the font files into /public/fonts
+
+Bring the styles in this file in  in from /public/icomoon/style.css
+ */
+
+// make sure path to font is correct here: /font/icomoon.eot
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/wp-content/themes/trapollo/fonts/icomoon.eot?xgocsn');
+  src:  url('/wp-content/themes/trapollo/fonts/icomoon.eot?xgocsn#iefix') format('embedded-opentype'),
+    url('/wp-content/themes/trapollo/fonts/icomoon.ttf?xgocsn') format('truetype'),
+    url('/wp-content/themes/trapollo/fonts/icomoon.woff?xgocsn') format('woff'),
+    url('/wp-content/themes/trapollo/fonts/icomoon.svg?xgocsn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none; 
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-linkedin2:before {
+  content: "\eaca";
+}

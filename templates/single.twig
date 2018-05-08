@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="idea-page">
+		<div class="idea-page--content">
+			<div>
+				<div>
+					<a {% if post.type == 'post' %}href="/news-ideas"{% else %} href="/customer-stories"{% endif %} class="back-btn ff-produkt tdn fz16 bb2-s-gray fvsc ls1">{% if post.type == 'post' %}Back to News &amp; Ideas {% elseif post.type == 'customer-story' %}Back to Customer Stories{% else %} Back{% endif %}</a>
+	                <h1 class="heading-1 c-orange mt20 tac tal@sm">{{ post.title }}</h1>
+	                <div class="idea-page--info oh mt30 tac tal@sm">
+	                    <div class="idea-page--start-date c-orange ff-produkt fz12 fvsc ls1 mb10">{{ post.date }}</div>
+	                    <div class="idea-page--author">{% if post.author_name %} {{ post.author_name }} {% else %}{{ post.author.name }} {% endif %}</div>
+	                </div>
+	            </div>
+	            <div class="idea-page--extras posr mt50 mt0@sm">
+	                <div class="idea-page--image-container posr oh h350"><img src="{{ post.thumbnail.src }}" class="idea-page--image transform-center-absolute w100%"></div>
+	            </div>
+			</div>
+			<div class="clearfix">
+				<div class="idea-page--body site-content-defaults mt50 mb50 lh1.5 span-8 push-2 span-12@md">
+					{{post.content}}
+
+					{% if post.include_whitepaper %}
+						<div class="whitepaper mt50 mb80 posr bgc-white">
+							<div class="whitepaper-icon posa t60">
+								{% include "snippets/icon-new-systems-box3.twig" %}
+							</div>
+							<div class="whitepaper-wrapper p40 pl80 pr60">
+								<h3 class="fz24 pb5 Graphik-Light-Web c-dark-gray">{{ post.whitepaper_title }}</h3>
+								<p class="fz14 pb20">{{ post.whitepaper_description }}</p>
+								<form class="whitepaper-form posr" action="http://go.trapollo.com/l/486781/2018-02-14/32n4j3" method="POST">
+									<label class="whitepaper-form--label" for=""><div class="label--text c-gray fz12">Email Address</div><input type="email" name="Your Email" class="form-input bgc-white bdn w100% mb30 Graphik-Light-Web" id="email" required aria-required="true"></label>
+									<button type="submit" class="whitepaper--btn horizontal-align-absolute@sm posa r0 w150 p15-0 ff-produkt bgc-orange c-white fvsc ls1 tac">submit</button>
+									<div class="error-container"></div>
+								</form>
+							</div>
+						</div>
+					{% endif %}
+
+					{{ post.content_below_whitepaper }}
+				</div>
+			</div>
+		</div>
+		{% if related_posts %}
+			<div class="idea-page--more-articles posa l0 r0 z2">
+				<div class="more-articles--wrapper l50% h100% bgc-dark-blue">
+					<div class="c-white fvsc ls1 ff-produkt pt50 pb20 tac">more ideas from trapollo</div>
+					<div class="grid-container">
+	                	<section class="idea-list mt60 clearfix">
+	                    	<div class="gallery-columns-3">
+
+	                    		{% for item in related_posts %}
+									{% include 'modules/idea-tile.twig' with {item: item, categories: categories} %}
+								{% endfor %}
+
+	                    	</div>
+	                    </section>
+	                    {% include "modules/alt-footer.twig" %}
+	                </div>
+				</div>
+			</div>
+		{% endif %}
+	</section>
+
+{% endblock %}

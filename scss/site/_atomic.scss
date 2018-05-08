@@ -1,0 +1,201 @@
+.transition-all-ease-in {
+  transition: 0.3s all ease-in;
+}
+
+.bb1-s-orange\:hover:hover {
+  border-bottom: 1px solid $color-orange;
+}
+
+.bb2-s-orange\:hover:hover {
+  border-bottom: 2px solid $color-orange;
+}
+
+.bdrs50\% {
+  border-radius: 50%;
+}
+
+.c-dark-gray\:hover:hover {
+  color: $color-dark-gray;
+}
+
+.bxsh0-0-35-lightergray {
+  box-shadow: 0px 0px 35px $color-lightergray;
+}
+
+.bxsh0-0-35-lightgray {
+  box-shadow: 0px 0px 35px $color-lightgray;
+}
+
+.bxsh10-10-35-lightgray {
+  box-shadow: 10px 10px 35px $color-lightgray;
+}
+
+.bxsh-10-10-35-lightgray {
+  box-shadow: -10px 10px 35px $color-lightgray;
+}
+
+.ttl {
+  text-transform: lowercase;
+}
+
+.fvsc {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.ls1 {
+  letter-spacing: 1px;
+}
+
+.ff-graphik {
+  font-family: $ff-graphik;
+}
+
+.ff-produkt {
+  font-family: $ff-produkt;
+}
+
+.h35 {
+  height: 35px;
+}
+
+.h95 {
+  height: 95px;
+}
+
+.h290 {
+  height: 290px;
+}
+
+.w35 {
+  width: 35px;
+}
+
+.w95 {
+  width: 95px;
+}
+
+.w130 {
+  width: 130px;
+}
+
+.w160 {
+  width: 160px;
+}
+
+.w220 {
+  width: 220px;
+}
+
+.w260 {
+  width: 260px;
+}
+
+.t320 {
+  top: 320px;
+}
+
+.l140 {
+  left: 140px;
+}
+
+.l120 {
+  left: 120px;
+}
+
+.t115 {
+  top: 115px;
+}
+
+.t120 {
+  top: 120px;
+}
+
+.t160 {
+  top: 160px;
+}
+
+.r85 {
+  right: 85px;
+}
+
+.r140 {
+  right: 140px;
+}
+
+.r160 {
+  right: 160px;
+}
+
+.r190 {
+  right: 190px;
+}
+
+.vh {
+  visibility: hidden;
+}
+
+.lh1\.8 {
+  line-height: 1.8;
+}
+
+.m-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.fReg {
+  font-weight: 500;
+}
+.tdec {
+  text-decoration: none !important;
+}
+
+@media all and (max-width: $bp-md) {
+  .tac\@md {
+    text-align: center;
+  }
+
+  .curp\@md {
+    cursor: pointer;
+  }
+
+  .bb2-s-lightblue\@md {
+    border-bottom: 2px solid $color-light-blue;
+  }
+
+  .lh1\.5\@md {
+    line-height: 1.5;
+  }
+}
+
+@media all and (max-width: $bp-sm) {
+	.bdn\@sm {
+		border: none;
+	}
+
+  .tal\@sm {
+    text-align: left;
+  }
+
+  .tac\@sm {
+    text-align: center;
+  }
+
+  .ml-20\@sm {
+    margin-left: -20px;
+  }
+
+  .mr-20\@sm {
+    margin-right: -20px;
+  }
+
+  .lh40px\@sm {
+    line-height: 40px;
+  }
+}
+
+@media all and (max-width: $bp-smx) {
+  .mt225\@smx {
+    margin-top: 225px;
+  }
+}

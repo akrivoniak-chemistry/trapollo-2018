@@ -1,0 +1,30 @@
+.search-results-page {
+  .search-results-page--input {
+    border: none;
+    border-bottom: 2px solid $color-dark-blue;
+    background-color: $color-background;
+  }
+
+  .search-results-page--input-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    border: 2px solid $color-dark-blue;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    z-index: 1;
+  }
+
+  .search-results-page--input-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 17px;
+    top: 35px;
+    background-color: $color-dark-blue;
+    transform: rotateZ(30deg);
+    height: 2px;
+    width: 10px;
+  }
+}

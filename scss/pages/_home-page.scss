@@ -1,0 +1,97 @@
+.home-page {
+  height: 850px;
+
+  @media all and (max-width: $bp-sm) {
+    height: 1450px;
+  }
+
+  @media all and (max-width: $bp-sm) {
+    .home-page--bg-2 {
+      bottom: auto;
+      top: 1350px;
+    }
+  }
+
+  .home-hero {
+    height: 425px;
+    top: calc(#{$height-header} + 95px);
+    & .self-select-menu--cta-container {
+      @media all and (max-width: $bp-md) {
+        margin-right: 0%;
+      }
+      @media all and (max-width: $bp-sm) {
+        margin-top: 100px;
+        &:first-child {
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+
+  .heart-svg {
+    margin-top: -75px;
+    opacity: 0;
+  }
+
+  .self-select-menu {
+    transform: translate(-45%, -45%);
+    
+    @media all and (max-width: $bp-sm) {
+      transform: translate(-45%, 0);
+    }
+  }
+
+  .home-hotspot--icon {
+    opacity: 0;
+    transition: opacity .5s ease-in-out 3s;
+
+    &.no-anim {
+      transition: none;
+    }
+
+    &.animate {
+      opacity: 1;
+    }
+  }
+}
+
+.stories-columns-2 .span-6 {
+  width: 48.4%;
+  &:last-child {
+    margin-right: 0;
+  }
+  @media all and (max-width: $bp-md) {
+    width: 100%;
+    margin: 0 0 50px;
+  }
+}
+.story-tile .featured-idea-tile--image-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media all and (max-width: $bp-sm) {
+    height: 250px;
+  }
+}
+.story-tile--author {
+  margin-left: 10px;
+  position: relative;
+  &:before {
+    position: absolute;
+    margin-left: -10px;
+    content: '-';
+  }
+}
+.story-tile .featured-idea-tile--read-more {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  @media all and (max-width: $bp-sm) {
+    position: relative;
+    padding: 0;
+    margin: 50px 20px;
+  }
+}

@@ -1,0 +1,101 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="service-page posr">
+		<section class="services-side-menu posf posa@md t150 l0@md t50@md fvsc ls1 ff-produkt c-orange">
+			<div class="services-side-menu--title fz14 curp@md bb2-s-lightblue@md">
+				services <span class="dn fz10 dib@md">∨</span>
+			</div>
+			<div class="posf z1 l0 r0 t0 b0 dn "></div>
+			<div class="services-side-menu--links dn@md">
+				{% for item in post.get_field('tabs') %}
+					<a class="services-side-menu--item h60 curp posr h20 w300 mt10 db tdn ff-produkt" href="#{{ item.tab_title|striptags|replace(' ', '-')|lower }}" data-tab="{{ item.tab_title|striptags|replace(' ', '-')|lower  }}">
+						<div class="item--contents curp p0-10@md">
+							<div class="item--icon w50 dib vertical-align-absolute an-n">
+								{% if item.tab_icon %}
+									<img src="{{ Image(item.tab_icon).src }}" alt="{{ item.tab_title }} Icon">
+								{% else %}
+									<!-- if correct template -->
+									{% if post.id == 34 %}
+										{% if loop.index == 1 %}
+	        		 						{% include "snippets/icon-manufacturers-box1.twig" %}
+	        		 					{% elseif loop.index == 2 %}
+	        		 						{% include "snippets/icon-manufacturers-box2.twig" %}
+	        		 					{% elseif loop.index == 3 %}
+	        		 						{% include "snippets/icon-manufacturers-box3.twig" %}
+	        		 					{% endif %}
+									{% else %}
+										{% if loop.index == 1 %}
+	        		 						{% include "snippets/icon-new-systems-box1.twig" %}
+	        		 					{% elseif loop.index == 2 %}
+	        		 						{% include "snippets/icon-new-systems-box2.twig" %}
+	        		 					{% elseif loop.index == 3 %}
+	        		 						{% include "snippets/icon-new-systems-box3.twig" %}
+	        		 					{% elseif loop.index == 4 %}
+	        		 						{% include "snippets/icon-new-systems-box4.twig" %}
+	        		 					{% endif %}
+	        		 				{% endif %}
+								{% endif %}
+							</div>
+							<div class="item--title l50 l100@md vertical-align-absolute dib c-gray fvsc ls1 bb2-s-lightblue@md dn@md">
+								{{ item.tab_title }}
+							</div>
+							<div class="item--title item--title__mobile l50 l100@md vertical-align-absolute dib c-gray fvsc ls1 bb2-s-lightblue@md">
+								{{ item.tab_title|striptags }}
+							</div>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</section>
+		<div class="service-page--content span-9 span-last span-12@md span-last-clear@md" data-reactid="216">
+			{% for item in post.get_field('tabs') %}
+				<div class="tab-content tab-content_{{ item.tab_title|striptags|replace(' ', '-')|lower  }}" data-id="{{ item.tab_title|striptags|replace(' ', '-')|lower  }}">
+					<h1 class="service-page--heading heading-1 ff-produkt c-orange mt60 mt100@md">{{ item.tab_headline }}</h1>
+					{% if item.include_illustration %}
+					<div class="mt25 clearfix">
+						<div class="posr flr w90% fln@sm horizontal-align@sm">
+							{% if loop.index == 1 %}
+		 						{% include "snippets/icon-services-image1.twig" %}
+		 					{% elseif loop.index == 2 %}
+		 						{% include "snippets/icon-services-image2.twig" %}
+		 					{% elseif loop.index == 3 %}
+		 						{% include "snippets/icon-services-image3.twig" %}
+		 					{% elseif loop.index == 4 %}
+		 						{% include "snippets/icon-services-image4.twig" %}
+		 					{% endif %}
+							<div>
+								{% for pod in item.pods %}
+									{% if pod.remove_pod == false %}
+										<div class="hotspot z3 service-hotspot-{{ loop.index }}  posa dn@md ">
+											<div class="hotspot--icon posr w40 h40 curp bxsh10-10-35-lightgray bdrs50% ">
+												<div>
+		                                        	<div class="breath posa"></div>
+		                                        	{% include "snippets/icon-hotspot.twig" %}
+		                                        </div>
+											</div>
+											<div class="hotspot--copy posa r0 t0 bgc-dark-blue c-white w200 dn">
+			                                    <div class="p15 pt30 pb30"><span className="fz14 lh1">{{ pod.pod_content }}</span></div>
+			                                </div>
+										</div>
+									{% endif %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					<div class="content--main oh mt50">
+						{% if item.pull_quote %}
+							<blockquote class="quote-block w260 span-12@sm bxsh10-10-35-lightgray p20 p0@sm fll bgc-white ff-produkt fw100 c-dark-blue fz20">{{ item.pull_quote }}</blockquote>
+						{% endif %}
+						<section class="content-main--text site-content-defaults {% if item.pull_quote is empty %} span-11 span-12@md {% else %}span-6 span-last span-12@sm span-last-clear@sm{% endif %} lh1.5 pt10 mb50">
+							<div>
+								{{ item.tab_content }}
+							</div>
+						</section>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

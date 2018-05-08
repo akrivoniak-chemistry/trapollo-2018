@@ -1,0 +1,23 @@
+.about-menu {
+
+  .about-menu--link:hover {
+    color: $color-light-blue;
+  }
+
+  .about-menu--link__active::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    border-top: 13px solid $color-light-blue;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+
+    @media all and (max-width: $bp-sm) {
+      top: 50px;
+    }
+  }
+}

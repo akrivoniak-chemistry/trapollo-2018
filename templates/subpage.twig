@@ -1,0 +1,75 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<section class="service-landing-page">
+		<div>
+			<img class="posa r0 t0 z0 w70%@md w100%@sm t50@sm float-on-scroll" src="{{ theme.link }}/images/services-page-bg-top.jpg" alt="Woman in Scrubs Typing on a Computer" />
+			<img class="posa l0 b20% z0 w250 dn@md float-on-scroll" src="{{ theme.link }}/images/services-page-bg-bottom-left.png" alt="Elderly Woman with Glasses Using a Tablet" />
+			<img class="horizontal-align-absolute t100% w300 z0 t100%@md dn@sm float-on-scroll fast" src="{{ theme.link }}/images/services-page-bg-bottom-mid.png" alt="Man Wearing Suit and Smiling" />
+		</div>
+		<div class="service-landing--content posr z0">
+			<div>
+				<h1 class="service-landing-page--heading heading-1 c-orange mt60 tac">{{ post.page_headline }}</h1>
+				{% if post.page_description %}
+					<div class="mt30 tac">
+						{{ post.page_description }}
+					</div>
+				{% endif %}
+			</div>
+			{% if post.subpage_boxes_title %}
+				<h2 class="tac mt40 c-orange ff-produkt fz32">{{ post.subpage_boxes_title }}</h2>
+			{% endif %}
+			<section class="services-menu clearfix mt125">
+				{% for item in post.get_field('subpage_boxes') %}
+					<div class="span-6 span-12@sm posr transition-all-ease-in {% if loop.index == 2 or loop.index == 4 %} span-last span-last-clear@sm {% endif %}">
+						<div class="services-menu--item horizontal-align posr tdn ff-produkt mb150 w300">
+							<a class="item--tile db bgc-white posr bxsh0-0-35-lightergray float-on-hover h290" href="{{ item.box_link }}">
+								<div class="item--icon horizontal-align-absolute w95 h95">
+									{% if item.box_icon %}
+										<img src="{{ Image(item.box_icon).src }}" alt="{{ item.box_title }} Icon">
+									{% else %}
+										<!-- if correct template -->
+										{% if post.id == 32 %}
+											{% if loop.index == 1 %}
+		        		 						{% include "snippets/icon-manufacturers-box1.twig" %}
+		        		 					{% elseif loop.index == 2 %}
+		        		 						{% include "snippets/icon-manufacturers-box2.twig" %}
+		        		 					{% elseif loop.index == 3 %}
+		        		 						{% include "snippets/icon-manufacturers-box3.twig" %}
+		        		 					{% endif %}
+										{% else %}
+											{% if loop.index == 1 %}
+		        		 						{% include "snippets/icon-new-systems-box1.twig" %}
+		        		 					{% elseif loop.index == 2 %}
+		        		 						{% include "snippets/icon-new-systems-box2.twig" %}
+		        		 					{% elseif loop.index == 3 %}
+		        		 						{% include "snippets/icon-new-systems-box3.twig" %}
+		        		 					{% elseif loop.index == 4 %}
+		        		 						{% include "snippets/icon-new-systems-box4.twig" %}
+		        		 					{% endif %}
+		        		 				{% endif %}
+									{% endif %}
+								</div>
+								<div class="item--content horizontal-align-absolute t75 p0-20 w100%">
+									<div class="item--title c-orange fvsc ls1">{{ item.box_title }}</div>
+									<div class="item--sub-title c-dark-blue mt30 fz20 fw100">{{ item.box_content }}</div>
+								</div>
+								<div class="item--cta bxsh10-10-35-lightgray horizontal-align-absolute tac w160 t90% p20-0 bgc-orange c-white fvsc ls1 tdn">learn more</div>
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</section>
+			{% if post.subpage_video_title %}
+				<h2 class="tac mb30 c-orange ff-produkt fz32">{{ post.subpage_video_title }}</h2>
+			{% endif %}
+			{% if post.subpage_video %}
+	        <div class="video-container oh posr mb50">
+	            {{ post.subpage_video }}
+	        </div>
+	        {% endif %}
+		</div>
+	</section>
+	
+{% endblock %}

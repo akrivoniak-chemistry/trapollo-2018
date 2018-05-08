@@ -1,0 +1,68 @@
+.phone-address-container {
+	font-family: Produkt Web;
+	font-weight: 100;
+	font-size: 14px;
+	color: #24205c;
+}
+.phone-address-container .address, .phone-address-container .phone {
+	width: 42%;
+	float: left;
+	box-shadow: 0 0 35px #efefef;
+	background-color: #fefefe;
+	padding: 20px 20px 60px;
+	margin: 0 0 0 5%;
+}
+.icon-address:before, .icon-phone:before {
+	color: #fff;
+	background-color: #f26450;
+	position: absolute;
+	top: -20px;
+	left: calc(50% - 30px);
+	font-size: 20px;
+	line-height: 20px;
+	padding: 10px;
+	border-radius: 100px;
+}
+.icon-phone:before {
+    content: "\E942";
+}
+.phone-address-container .title {
+    display: inline-block;
+    font-family: Produkt Web;
+    font-weight: 100;
+    line-height: 30px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+    color: #f26450;
+ }
+.icon-address:before {
+    content: "\E903";
+}
+.phone-address-container .title {
+    display: inline-block;
+    font-family: Produkt Web;
+    font-weight: 100;
+    line-height: 30px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-variant: small-caps;
+    color: #f26450;
+}
+
+.phone-address-container .content {
+    font-family: Produkt Web;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 18px;
+    color: #24205c;
+}
+.contact-us-page--form .form-input,
+.contact-us-page--form label {
+	width: 100%;
+}
+.contact-page--label > label.error {
+	display: none !important;
+}

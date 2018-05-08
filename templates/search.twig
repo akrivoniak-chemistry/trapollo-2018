@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section class="default-page post-type-{{post.post_type}}" id="post-{{post.ID}}">
+    <div class="clearfix">
+      <a href="/" class="back-btn ff-produkt tdn fz16 bb2-s-gray fvsc ls1">Back to Home</a>
+      <h1 class="heading-1 c-orange mt20 tac">Searched for: {{ search_query }}</h1>
+    </div>
+    <section class="ideas-landing-page">
+      <section>
+          <section class="idea-list mt100 clearfix">
+            <div class="gallery-columns-3">
+              {% for post in posts %}
+                <div class="idea-tile mb150 posr span-4 span-6@md span-12@sm">
+                  <div class="idea-tile--container bgc-white posr bxsh0-0-35-lightergray float-on-hover h350">
+                      <!-- <a class="idea-tile--image-container curp oh h150 posa b100% l0 w100%" href="">
+                        <img class="idea-tile--image w100% transform-center-absolute" src="//s3-us-west-2.amazonaws.com/trapollo/pPEJ-Ub7xJ36P4Wk.png" alt="Trapollo, a Cox Business colored logo">
+                      </a> -->
+                      <div class="idea-tile--content h100% p20 posr">
+                        <a class="c-orange ff-produkt fvsc ls1 tdn" href="{{ post.link }}">{{ post.type }}</a>
+                        <a class="tdn curp h100%" href="/our-ideas/cox-business-emphasizes-commitment-to-telehealth-names-new-vp-gm" data-reactid="227">
+                          <h3 class="heading-3 c-dark-blue fz20 ff-produkt tdn mt60" data-reactid="228">{{ post.title }}</h3>
+                          <div class="site-content-defaults h100% mt30 lh1.5" data-reactid="229">
+                            {% if post.type == 'page' %}
+                              {{post.excerpt }}
+                            {% else %}
+                              {{post.preview.length(25)}}
+                            {% endif %}
+                          </div>
+                          <div class="idea-tile--read-more bxsh10-10-35-lightgray horizontal-align-absolute w220 t320 p20-0 bgc-orange ff-produkt c-white fvsc ls1 tac" data-reactid="230">read more</div>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+            </div>
+          </section>
+        </section>
+    </section>
+  </section>
+{% endblock %}

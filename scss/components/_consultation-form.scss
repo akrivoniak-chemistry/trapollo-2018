@@ -1,0 +1,143 @@
+.consultation-form {
+  input {
+    + .consultation-form--radio-label {
+      vertical-align: top;
+    }
+
+    + .consultation-form--checkbox-label {
+      padding-left: 45px;
+      position: relative;
+      vertical-align: top;
+    }
+
+    &:checked + .consultation-form--radio-label > .radio-label--checkbox,
+    &:checked + .consultation-form--checkbox-label > .checkbox-label--checkbox {
+      background: $color-light-blue;
+    }
+
+    &:checked + .consultation-form--radio-label > .radio-label--checkbox {
+      &::before,
+      &::after {
+        content: "";
+        width: 23px;
+        height: 2px;
+        top: 15px;
+        left: 4px;
+        background-color: $color-white;
+        position: absolute;
+      }
+
+      &::before {
+        transform: rotateZ(45deg);
+      }
+
+      &::after {
+        transform: rotateZ(-45deg);
+      }
+    }
+
+    &:checked + .consultation-form--checkbox-label > .checkbox-label--checkbox {
+      &::before,
+      &::after {
+        content: "";
+        background-color: $color-white;
+        position: absolute;
+      }
+
+      &::before {
+        width: 10px;
+        height: 2px;
+        top: 16px;
+        left: 5px;
+        transform: rotateZ(45deg);
+      }
+
+      &::after {
+        width: 20px;
+        height: 2px;
+        top: 13px;
+        left: 10px;
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    .form-wrap {
+      height: auto;
+    }
+  }
+
+  .steps {
+    li {
+      border-radius: 50%;
+      vertical-align: middle;
+
+      &.active {
+        height: 20px;
+        margin: 0 8px;
+        width: 20px;
+
+        &:after {
+          background-color: $color-orange;
+          border-radius: 50%;
+          bottom: 4px;
+          content: "";
+          left: 4px;
+          position: absolute;
+          right: 4px;
+          top: 4px;
+        }
+      }
+    }
+  }
+
+  .step {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+
+    @media all and (max-width: $bp-sm) {
+      top: 0;
+      position: relative;
+      transform: translate(0,0);
+    }
+  }
+
+  .buttons {
+    .previous {
+      margin-left: calc(10% - 20px);
+    }
+
+    .next {
+      margin-right: calc(10% - 20px);
+    }
+  }
+
+  @media all and (max-width: $bp-sm) {
+    .navigation--request-consultation-link {
+      .icon {
+        float: right;
+      }
+
+      .text {
+        bottom: inherit;
+        left: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .buttons {
+      top: 0;
+      transform: none;
+      .previous, .next {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}

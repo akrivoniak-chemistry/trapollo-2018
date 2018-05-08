@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section class="default-page post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<div class="clearfix">
+			{% if slug %}
+				<a href="/news-ideas" class="back-btn ff-produkt tdn fz16 bb2-s-gray fvsc ls1">Back to News &amp; Ideas</a>
+				<h1 class="heading-1 c-orange mt20 tac">Category: {{ function('single_cat_title', post.ID) }} </h1>
+			{% else %}
+				<h1 class="heading-1 c-orange mt20 tac">{{ title }}</h1>
+				<div class="mt30 tac">
+					<p>Please explore our vairous customer stories about their personal experiences with the Trapollo platform.</p>
+				</div>
+			{% endif %}
+		</div>
+		<section class="ideas-landing-page">
+			<section>
+				{% if slug %}
+		    		<section class="idea-list mt200 clearfix">
+					    <div class="gallery-columns-3">
+					    	{% filter shortcodes %}
+								[ajax_load_more container_type="div" post_type="post" posts_per_page="9" scroll="false" button_label="Load More" category="{{ slug }}"]
+							{% endfilter %}
+					    </div>
+		    		</section>
+	    		{% else %}
+	    			<section class="idea-list mt200 clearfix">
+					    <div class="gallery-columns-3">
+					    	{% filter shortcodes %}
+								[ajax_load_more container_type="div" post_type="customer-story" posts_per_page="9" scroll="false" button_label="Load More" category="{{ slug }}"]
+							{% endfilter %}
+					    </div>
+		    		</section>
+	    		{% endif %}
+	    	</section>
+		</section>
+	</section>
+{% endblock %}

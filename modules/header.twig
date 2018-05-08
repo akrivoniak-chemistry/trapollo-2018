@@ -1,0 +1,31 @@
+<div class="grid-container posr h100%">
+	<div class="logo-container l0 h100% w200 w150@sm posr fll">
+		<a class="curp" href="{{site.url}}" rel="home">
+			{% include "snippets/logo-svg.twig" %}
+		</a>
+	</div>
+    <nav class="navigation vertical-align flr">
+    	{% if header_link_text %}
+    		<a class="navigation--request-consultation-link c-orange lh1.8 lh1.2@md reunderline thick ff-produkt fvsc ls1 dib tac mr20 tdn pb5@md w80@sm fz12@sm mr5@sm posr@sm t5@sm" href="{{ header_link_url }}">{{ header_link_text }}</a>
+    	{% endif %}
+        <button class="navigation--menu-button dib h44 w44 posr"><span class="menu-button--middle-line posa r0 t20 dib w20 bgc-dark-blue flr"></span></button>
+    </nav>
+</div>
+<section class="navigation-menu  posf w100vw l100% h100vh t0 z1">
+	<div class="navigation-menu--clear posa w50vw dn@sm h100vh curp"></div>
+	<div class="navigation-menu--content posa r0 w50vw h100% w100vw@md bgc-dark-blue c-orange ff-produkt fw300 pl80 pt50 pt30@sm pl20@sm">
+		<button class="navigation-menu--close-x posa p25 t0 r20% fz48 fw100 c-white p10@sm r0@md">×</button>
+		<div class="horizontal-align-absolute@sm">
+			<div class="c-white fvsc ls1">menu</div>
+			{% include "menu.twig" with {'menu': main_header.get_items} %}
+	        <div class="navigation-menu--search mt40 mt20@sm posr">
+	        	<form method="get" role="search" action="{{ site.url }}" class="navbar-form navbar-left">
+	        		<label for="site-search">
+				  		<input type="text" placeholder="" name="s" class="form-control search--input bdn bgc-dark-blue c-white fz32 fz24@sm pl40 ff-produkt fw300 w250@sm">
+				  		<input type="submit" value="" class="search--submit" >
+				  	</label>
+				</form>
+            </div>
+		</div>
+	</div>
+</section>
